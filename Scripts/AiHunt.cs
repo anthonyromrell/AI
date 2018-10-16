@@ -9,7 +9,7 @@ public class AiHunt : AiBase
 {
 	public GameAction GameAction;
 	
-	private Transform Destination;
+	private Transform destination;
 
 	private void OnEnable()
 	{
@@ -18,13 +18,13 @@ public class AiHunt : AiBase
 
 	private void Call(object obj)
 	{
-		Destination = obj as Transform;
+		destination = obj as Transform;
 	}
 
 	public override void Navigate(NavMeshAgent ai)
 	{
 		ai.speed = Speed.Value;
 		ai.angularSpeed = AngularSpeed.Value;
-		ai.destination = (Destination != null ? Destination.position : ai.transform.position);
+		ai.destination = (destination != null ? destination.position : ai.transform.position);
 	}
 }

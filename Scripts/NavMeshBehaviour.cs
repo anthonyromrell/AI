@@ -4,15 +4,15 @@ using UnityEngine.AI;
 [RequireComponent(typeof(NavMeshAgent))]
 public class NavMeshBehaviour : MonoBehaviour
 {
-	private NavMeshAgent NavMeshAgent;
+	private NavMeshAgent navMeshAgent;
 	public AiBase AiBase;
     
 	void Start ()
 	{
-		NavMeshAgent = GetComponent<NavMeshAgent>();
+		navMeshAgent = GetComponent<NavMeshAgent>();
 	}
 
 	void Update () {
-		AiBase.Navigate(NavMeshAgent);
+		AiBase.Navigate(navMeshAgent);
 	}
 }
